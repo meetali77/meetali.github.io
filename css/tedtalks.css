@@ -1,0 +1,281 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  font-weight: normal;
+  font-family: serif;
+}
+
+body {
+  background-color: rgb(216, 215, 215)
+}
+/* header css */
+header {
+  width: 100%;
+  height: 80px;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+
+}
+.logo-pic {
+  width: 13%;
+}
+.hamburger {
+  display: none;
+}
+
+.nav-bar ul {
+  display: flex;
+  list-style: none;
+}
+.nav-bar ul li a {
+  display: block;
+  color: #fefefe;
+  text-decoration: none;
+  font-size: 17px;
+  padding: 10px 25px;
+  border-radius: 50px;
+  transition: 0.2s;
+  margin: 0 5px;
+}
+
+.nav-bar ul li a:hover {
+  color: black;
+  background: rgb(255, 204, 0);
+  opacity: 0.8;
+}
+
+.nav-bar ul li a.active {
+  color: black;
+  background: rgb(255, 204, 0);
+}
+
+@media only screen and (max-width: 1320px) {
+  header {
+    padding: 0 50px;
+  }
+
+}
+
+@media only screen and (max-width: 1100px) {
+  header {
+    padding: 0 30px;
+  }
+
+}
+
+@media only screen and (max-width: 900px) {
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .hamburger .line {
+    width: 30px;
+    height: 3px;
+    background: #fefefe;
+    margin: 6px 0;
+  }
+
+  .nav-bar {
+    height: 0px;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    background: black;
+    transition: 0.5s;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .nav-bar.active {
+    height: 450px;
+    z-index: 1;
+  }
+  
+  .nav-bar ul {
+    display: block;
+    width: fit-content;
+    margin: 80px auto 0 auto;
+    text-align: center;
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  .nav-bar.active ul {
+    opacity: 1;
+  }
+
+  .nav-bar ul li a {
+    margin-bottom: 12px;
+
+  }
+
+}
+
+
+.title {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 10px;
+}
+.search-bar {
+  height: 35px;
+  padding-left: 10px;
+  border-radius: 10px;
+  border-color: gray;
+  border-style: solid;
+  border-width: 1px;
+  margin-right: 20px;
+}
+.search-bar::placeholder{
+  font-size: 14px;
+}
+
+.search-bar-container {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.navigation-bar {
+  display: flex;
+  flex-direction: row;
+  background-color: lightgray;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+}
+.dropdown-languages{
+
+  flex: 1;
+}
+  
+.dropdown-topics 
+{
+  flex: 1;
+}
+.dropdown-durations 
+{
+  flex: 1;
+}
+
+.search-button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  /* border-width: 1px;
+  border-color: gray;
+  border-style: solid; */
+  border-radius: 15px;
+  margin-left: -57px;
+  background: transparent;
+  
+}
+
+.search-button:hover {
+  background-color: rgb(220, 215, 215);
+  transition: 0.3s;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 15px;
+  align-items: flex-start;
+  padding: 5px 5%;
+  
+}
+
+.container .main-video{
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.container .main-video img {
+  width: 100%;
+  height: 550px;
+  border-radius: 5px;
+  object-fit: cover;
+
+}
+
+.main-title {
+  margin-left: 0%;
+}
+
+.container .video-list{
+  background: #fff;
+  height: 520px;
+  border-radius: 5px;
+  overflow-y: scroll;
+
+}
+.container .video-list::-webkit-scrollbar{
+  width: 7px;
+}
+.container .video-list::-webkit-scrollbar-track {
+  background: #ccc;
+  border-radius: 50px;
+}
+.container .video-list::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 50px;
+}
+.container .video-list .vid {
+  background: #f7f7f7;
+  border-radius: 5px;
+  gap: 15px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, .1);
+  cursor: pointer;
+}
+
+
+
+.container .video-list .vid:hover {
+  background: #eee;
+}
+
+.container .video-list .vid.active {
+  background: rgb(198, 224, 233);
+}
+
+.container .video-list .vid.active .title {
+  color: #fff;
+}
+
+.container .video-list .vid .title {
+  color: #333;
+  font-size: 17px;
+}
+
+@media (max-width: 991px) {
+  .container {
+    grid-template-columns: 1.5fr 1fr; 
+    padding: 10px;
+    
+  }
+
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .search-bar-container{
+    margin-left: 20px;
+  }
+
+
+
+
+}
+
+

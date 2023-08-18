@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+
+    <link rel="shortcut icon" href="icons/logo.jpg.png" type="image/x.icon">
+    <link rel="stylesheet" href="css/index.css"> 
+    <script src="js/index.js"></script>
+    
+  </head>
+  <body>
+
+    <header>
+
+      <div class="logo">
+        <img class="logo-pic" src="icons/logo.jpg.png">
+      </div>
+      <div class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <nav class="nav-bar">
+        <ul>
+          <li>
+            <a href="index.html" class="active">Home</a>
+          </li>
+          <li>
+            <a href="articles.html">Articles</a>
+          </li>
+          <li>
+            <a href="tedtalks.html">Tedtalks</a>
+          </li>
+          <li>
+            <a href="blogs.html">Blogs</a>
+          </li>
+          <li>
+            <a href="subscribe.html">Subscribe</a>
+          </li>
+          <li>
+            <a href="register.html">Register</a>
+          </li>
+        </ul>
+      </nav>
+
+    </header>
+
+    <script>
+      hamburger = document.querySelector(".hamburger");
+      hamburger.onclick = function (){
+        navBar = document.querySelector(".nav-bar");
+        navBar.classList.toggle("active");
+      }
+    </script>
+    
+
+    <!-- Main article of the month -->
+    <div class="article-container">
+      <img class="article-image" src="general pics/ca-ku-TeJitCk3ftc-unsplash-min.jpg">
+      <div class="article-title">
+        <p>These sacred trees face new threats in a changing world</p>       
+      </div>
+      <div class="article-topic">
+        <p>Environment</p>
+      </div>
+      <button class="btn btn-background-slide">Read more</button>
+    </div>
+
+    <!-- Categories of topics -->
+    <div class="container">
+      <div class="animals">
+        <img class="image" src="general pics/vincent-van-zalinge-vUNQaTtZeOo-unsplash-min.jpg">
+        <div class="vertical-line"></div>
+        <div class="topic">
+          Animals
+        </div>
+      </div>
+      <div class="environment">
+        <img class="image" src="general pics/pamela-callaway-aBYhjZVfNfU-unsplash-min.jpg">
+        <div class="vertical-line-two"></div>
+        <div class="topic-two">
+          Environment
+        </div>
+      </div>
+      <div class="science">
+        <img class="image" src="general pics/harlie-raethel-ouyjDk-KdfY-unsplash-min.jpg">
+        <div class="vertical-line-three"></div>
+        <div class="topic-three">
+          Science
+        </div>
+      </div>
+      <!-- <div class="categories">
+        <div class="text">
+          Catergories
+        </div>        
+      </div> -->
+    </div>
+
+    
+
+
+
+
+
+    
+  </body>
+</html>

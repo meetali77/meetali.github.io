@@ -1,0 +1,340 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(216, 215, 215)
+}
+/* header css */
+header {
+  width: 100%;
+  height: 80px;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+
+}
+
+.logo-pic {
+  width: 13%;
+}
+
+.hamburger {
+  display: none;
+}
+
+.nav-bar ul {
+  display: flex;
+}
+.nav-bar ul li a {
+  display: block;
+  color: #fefefe;
+  font-size: 17px;
+  padding: 10px 25px;
+  border-radius: 50px;
+  transition: 0.2s;
+  margin: 0 5px;
+}
+
+.nav-bar ul li a:hover {
+  color: black;
+  background: rgb(255, 204, 0);
+  opacity: 0.8;
+}
+
+.nav-bar ul li a.active {
+  color: black;
+  background: rgb(255, 204, 0);
+}
+
+@media only screen and (max-width: 1320px) {
+  header {
+    padding: 0 50px;
+  }
+
+}
+
+@media only screen and (max-width: 1100px) {
+  header {
+    padding: 0 30px;
+  }
+
+}
+
+@media only screen and (max-width: 900px) {
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .hamburger .line {
+    width: 30px;
+    height: 3px;
+    background: #fefefe;
+    margin: 6px 0;
+  }
+
+  .nav-bar {
+    height: 0px;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    background: black;
+    transition: 0.5s;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .nav-bar.active {
+    height: 450px;
+    z-index: 1;
+  }
+  
+  .nav-bar ul {
+    display: block;
+    width: fit-content;
+    margin: 80px auto 0 auto;
+    text-align: center;
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  .nav-bar.active ul {
+    opacity: 1;
+  }
+
+  .nav-bar ul li a {
+    margin-bottom: 12px;
+
+  }
+
+}
+/* main article css */
+.article-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
+
+}
+
+.article-image {
+  height: 500px; 
+  width: 600px;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+
+
+.article-title {
+
+  position: absolute;
+  color: white;
+  bottom: 60px;
+  font-weight: bold;
+  font-size: 19px;
+  padding-left: 10px;
+}
+.article-topic {
+  position: absolute; 
+  bottom: 90px; 
+  color: white; 
+  letter-spacing: 3px; 
+  padding-left: 10px;
+
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/* read more button */
+.btn {
+  background-color: var(--background-color);
+  color: white;
+  padding: .5em 1em;
+  border: none;
+  position: absolute;
+  outline: none;
+  cursor: pointer;
+  width: 105px;
+  height: 45px;
+  top: 89%;
+  left: 47%;
+  
+
+  --background-color:black;
+  --border-size: 2px;
+  --accent-color: rgb(255, 204, 0);
+}
+.btn.btn-background-slide::before {
+  content: '';
+  position: absolute;
+  top: 0%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background-color: var(--accent-color);
+
+  transition: transform 300ms ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.btn.btn-background-slide:hover::before,
+.btn.btn-background-slide:focus::before {
+  transform: scaleX(1);
+}
+
+.btn.btn-background-slide {
+  transition: color 300ms ease-in-out;
+  z-index: 1;
+}
+
+
+.btn.btn-background-slide:hover,
+.btn.btn-background-slide:focus {
+  color: black;
+}
+
+/* topics  */
+.container {
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-left: 30px;
+  margin-right: 30px;
+
+}
+
+.image {
+  height: 200px; 
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+  object-fit: cover;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+.animals, .environment, .science {
+  height: 200px;
+  margin-right: 10px;
+}
+.science {
+  margin-left: 10px;
+}
+
+.topic, .topic-two, .topic-three {
+  position: absolute;
+  color: white;
+  letter-spacing: 2px;
+  font-size: 20px;
+  top: 97%;
+  left: 7%;
+}
+
+.vertical-line {
+  border-left: 6px solid rgb(255, 204, 0);
+  position: absolute;
+  top: 97%;
+  left: 5%;
+  height: 30px;
+}
+
+.topic-two {
+  left: 39%
+}
+
+.vertical-line-two {
+  border-left: 6px solid rgb(255, 204, 0);
+  position: absolute;
+  top: 97%;
+  left: 37%;
+  height: 30px;
+}
+
+
+.topic-three {
+  left: 71%;
+}
+
+.vertical-line-three {
+  border-left: 6px solid rgb(255, 204, 0);
+  position: absolute;
+  top: 97%;
+  left: 69%;
+  height: 30px;
+}
+
+@media(max-width:390px){
+  .article-topic{
+    top: 73%;
+  }
+  .article-title{
+    text-align: center;
+  }
+  .vertical-line-three{
+    left: 23%;
+  }
+
+
+}
+
+@media (max-width: 700px) {
+  .container{
+    grid-template-columns: 1fr;
+  }
+
+  .environment {
+    margin-top: 10px;
+    margin-bottom: 10px
+  }
+
+  .science {
+    margin-left: 0;
+  }
+
+  .topic{
+    left: 17%;
+  }
+  .topic-two {
+    top: 127%;
+    left: 17%;
+  }
+  .topic-three {
+    top: 157%;
+    left: 17%;
+  }
+
+  .vertical-line{
+    left: 12%;
+  }
+
+  .vertical-line-two{
+    left: 12%;
+    top: 127%;
+  }
+
+  .vertical-line-three {
+    top: 157%;
+    left: 12%;
+  }
+
+  .btn {
+    left: 40%;
+  }
+}
+
+
+
+

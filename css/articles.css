@@ -1,0 +1,281 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --handle-size: 3rem;
+  --img-gap: .25rem;
+}
+
+body {
+  margin: 0;
+}
+
+/* header css */
+header {
+  width: 100%;
+  height: 80px;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+
+}
+
+
+.logo-pic {
+  width: 13%;
+}
+
+.hamburger {
+  display: none;
+}
+
+.nav-bar ul {
+  display: flex;
+  list-style: none;
+}
+.nav-bar ul li a {
+  display: block;
+  color: #fefefe;
+  text-decoration: none;
+  font-size: 17px;
+  padding: 10px 25px;
+  border-radius: 50px;
+  transition: 0.2s;
+  margin: 0 5px;
+}
+
+.nav-bar ul li a:hover {
+  color: black;
+  background: rgb(255, 204, 0);
+  opacity: 0.8;
+}
+
+.nav-bar ul li a.active {
+  color: black;
+  background: rgb(255, 204, 0);
+}
+
+@media only screen and (max-width: 1320px) {
+  header {
+    padding: 0 50px;
+  }
+
+}
+
+@media only screen and (max-width: 1100px) {
+  header {
+    padding: 0 30px;
+  }
+
+}
+
+@media only screen and (max-width: 900px) {
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .hamburger .line {
+    width: 30px;
+    height: 3px;
+    background: #fefefe;
+    margin: 6px 0;
+  }
+
+  .nav-bar {
+    height: 0px;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    background: black;
+    transition: 0.5s;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .nav-bar.active {
+    height: 450px;
+    z-index: 1;
+  }
+  
+  .nav-bar ul {
+    display: block;
+    width: fit-content;
+    margin: 80px auto 0 auto;
+    text-align: center;
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  .nav-bar.active ul {
+    opacity: 1;
+  }
+
+  .nav-bar ul li a {
+    margin-bottom: 12px;
+
+  }
+
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+
+.slider {
+  --items-per-screen: 4;
+  --slider-index: 0;
+  display: flex;
+  flex-grow: 1;
+  margin: 0 var(--img-gap);
+  transform: translateX(calc(var(--slider-index) * -100%));
+  transition: transform 250ms ease-in-out;
+}
+
+.slider > div {
+  flex: 0 0 calc(100% / var(--items-per-screen));
+  max-width: calc(100% / var(--items-per-screen));
+  aspect-ratio: 16 / 9;
+  padding: var(--img-gap);
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+.slider > div {
+  padding-left: 17px;
+}
+
+
+
+.slider > img {
+  flex: 0 0 calc(100% / var(--items-per-screen));
+  max-width: calc(100% / var(--items-per-screen));
+  aspect-ratio: 16 / 9;
+  padding: var(--img-gap);
+  object-fit: cover;
+  z-index: 3;
+}
+
+.slider > div > img {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 3px;
+  
+}
+
+.slider > div > img:hover {
+  transform: scale(1.2);
+  transition: 0.4s;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px #000;
+}
+
+
+.handle {
+  border: none;
+  border-radius: 1rem;
+  flex-grow: 0;
+  flex-shrink: 0;
+  background-color: rgba(255, 255, 255, .25);
+  z-index: 10;
+  margin: var(--img-gap) 0;
+  width: var(--handle-size);
+  cursor: pointer;
+  font-size: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  line-height: 0;
+  transition: background-color 150ms ease-in-out;
+}
+
+.left-handle {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.right-handle {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.handle:hover,
+.handle:focus {
+  background-color: rgba(255, 255, 255, .5);
+}
+
+.text {
+  transition: transform 150ms ease-in-out;
+}
+
+.handle:hover .text,
+.handle:focus .text {
+  transform: scale(1.2);
+}
+.page-title {
+  text-align: center;
+}
+
+.header2 {
+  display: flex;
+  justify-content: space-between;
+  padding: .5rem calc(var(--img-gap) * 2 + var(--handle-size));
+  align-items: center;
+}
+
+.title {
+  font-size: 19px;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+
+.progress-bar {
+  display: flex;
+  gap: .25rem;
+}
+
+.progress-item {
+  flex: 0 0 1.5rem;
+  min-width: 1.5rem;
+  height: .5rem;
+  background-color: rgba(255, 255, 255, .5);
+}
+
+.progress-item.active {
+  background-color: rgba(255, 255, 255, .9);
+}
+
+@media (max-width: 1000px) {
+  .slider {
+    --items-per-screen: 3;
+  }
+}
+
+@media (max-width: 500px) {
+  .slider {
+    --items-per-screen: 2;
+  }
+}
+
+body {
+  
+  background-color: black;
+  color: white;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 35px;
+  font-weight: bolder;
+}
